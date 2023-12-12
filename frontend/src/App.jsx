@@ -1,24 +1,25 @@
 import React from 'react'
 import './App.css'
 
-// import HomePage from './pages/HomePage'
+import HomePage from './pages/HomePage'
+
+
+// import BlogPage from './pages/BlogPage'
 import ShopPage from './pages/ShopPage'
-import ContactPage from './pages/ContactPage'
-import AccountPage from './pages/AccountPage'
-import CartPage from './pages/CartPage'
 
 function App() {
  
 
   return (
    <React.Fragment>
-    {/* <HomePage/> */}
-    {/* <ShopPage/> */}
+     <HomePage/> 
+     {/* <ShopPage/>  */}
     {/* <ContactPage/> */}
     {/* <AccountPage/> */}
-    <CartPage/>
-
-    
+    {/* <CartPage/> */}
+    {/* <BlogDetailsPage/> */}
+     {/* <BlogPage/>     */}
+    {/* <ProductDetailsPage/> */}
    
    </React.Fragment>
     

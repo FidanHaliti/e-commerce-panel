@@ -13,7 +13,7 @@ const Blogs = () => {
        <BlogItem/>
        <BlogItem/>
        <BlogItem/>
-       <BlogItem/>
+       
        </ul>
       </div>
     </section>
