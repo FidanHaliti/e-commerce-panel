@@ -1,6 +1,9 @@
+import { useState } from "react"
 import "./Info.css"
 
 const Info = () => {
+  const [color, setcolor] = useState("red-color")
+  const [size, setSize] = useState(0)
   return (
     <div className="product-info">
               <h1 className="product-title">Ridley High Waist</h1>
@@ -29,22 +32,22 @@ const Info = () => {
                       <span>Color</span>
                     </div>
                     <div className="colors-wrapper">
-                      <div className="color-wrapper">
+                      <div className={`color-wrapper ${color === "blue-color" ? "active" : ""}`} onClick={() => setcolor("blue-color")} >
                         <label className="blue-color">
                           <input type="radio" name="product-color" />
                         </label>
                       </div>
-                      <div className="color-wrapper">
+                      <div className={`color-wrapper ${color === "red-color" ? "active" : ""}`} onClick={() => setcolor("red-color")} >
                         <label className="red-color">
                           <input type="radio" name="product-color" />
                         </label>
                       </div>
-                      <div className="color-wrapper active">
+                      <div className={`color-wrapper ${color === "green-color" ? "active" : ""}`} onClick={() => setcolor("green-color")}>
                         <label className="green-color">
                           <input type="radio" name="product-color" />
                         </label>
                       </div>
-                      <div className="color-wrapper">
+                      <div className={`color-wrapper ${color === "purple-color" ? "active" : ""}`} onClick={()=> setcolor("purple-color")} >
                         <label className="purple-color">
                           <input type="radio" name="product-color" />
                         </label>
@@ -56,11 +59,11 @@ const Info = () => {
                       <span>Size</span>
                     </div>
                     <div className="values-list">
-                      <span className="active">XS</span>
-                      <span>S</span>
-                      <span>M</span>
-                      <span>L</span>
-                      <span>XL</span>
+                      <span className={size === 0 ? "active" : ""} onClick={() => setSize(0)}>XS</span>
+                      <span className={size === 1 ? "active" : ""} onClick={() => setSize(1)}>S</span>
+                      <span className={size === 2 ? "active" : ""} onClick={() => setSize(2)}>M</span>
+                      <span className={size === 3 ? "active" : ""} onClick={() => setSize(3)}>L</span>
+                      <span className={size === 4 ? "active" : ""} onClick={() => setSize(4)}>XL</span>
                     </div>
                   </div>
                   <div className="cart-button">
