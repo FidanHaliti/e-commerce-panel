@@ -26,6 +26,8 @@ PrevBtn.propTypes = {
 
 const Products = () => {
   const [products] = useState(ProductData)
+  
+ 
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -43,6 +45,7 @@ const Products = () => {
   };
   return (
     <section className="products">
+      
     <div className="container">
       <div className="section-title">
         <h2>Featured Products</h2>
@@ -52,7 +55,7 @@ const Products = () => {
         <div className="glide__track" data-glide-el="track">
             <Slider {...sliderSettings}>
               {products.map((product) => (
-                <ProductsItem product={product} key={product.id}/>
+                <ProductsItem productItem={product}  key={product.id}/>
               ))}
               
             </Slider>

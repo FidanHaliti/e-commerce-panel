@@ -5,7 +5,7 @@ const BlogItem = () => {
     
     <li className="blog-item">
     <a href="#" className="blog-image">
-      <img src="img/blogs/blog1.jpg" alt=""/>
+      <img src="/img/blogs/blog1.jpg" alt=""/>
     </a>
     <div className="blog-info">
       <div className="blog-info-top">
