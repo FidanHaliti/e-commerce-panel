@@ -233,7 +233,7 @@ const Header = ({ setIsSearchShow }) => {
                   <button
                     className="search-button"
                     onClick={() => {
-                      if (window.confirm("Are you sure?")) {
+                      if (window.confirm("Are you sure you want to exit?")) {
                         {
                           localStorage.removeItem("user");
                           window.location.href = "/";
