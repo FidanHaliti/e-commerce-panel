@@ -20,7 +20,7 @@ const handleCloseDialog = (event) => {
             <div>Sign up and get 50% off your next Order</div>
           </div>
         </div>
-        <form onSubmit="return" method="post">
+        <form >
           <div className="form-group required">
             <input
               type="email"
