@@ -1,5 +1,6 @@
-import React from "react";
+
 import "./App.css";
+import AdminUserPage from "./pages/Admin/AdminUserPage";
 import HomePage from "./pages/HomePage";
  import CartPage from './pages/CartPage'
 import { Route, Routes } from "react-router-dom";
@@ -22,7 +23,12 @@ function App() {
       <Route path="/cart" element={<CartPage />} />
       <Route path="/auth" element={<AccountPage />} />
       <Route path="/product/:id" element={<ProductDetailsPage />} />
-      <Route path="/blog/:id" element={<BlogDetailsPage />} />
+      <Route path="/blog/:id" element={<BlogDetailsPage />} /> 
+      <Route path="/admin/*" >
+        <Route path="users" element={<AdminUserPage />} />
+      </Route>
+     
+
     </Routes>
   );
 }
