@@ -1,6 +1,6 @@
 
 import "./App.css";
-import AdminUserPage from "./pages/Admin/AdminUserPage";
+import UserPage from "./pages/Admin/UserPage";
 import HomePage from "./pages/HomePage";
  import CartPage from './pages/CartPage'
 import { Route, Routes } from "react-router-dom";
@@ -10,8 +10,10 @@ import ProductDetailsPage from './pages/ProductDetailsPage'
  import ShopPage from './pages/ShopPage'
 import ContactPage from "./pages/ContactPage";
 import AccountPage from "./pages/AccountPage";
-import BlogDetails from "./components/BlogDetails/BlogDetails";
+// import BlogDetails from "./components/BlogDetails/BlogDetails";
 import BlogDetailsPage from "./pages/BlogDetailsPage";
+import CategoryPage from "./pages/Admin/CategoryPage";
+import CategoryUpdatePage from "./pages/Admin/CategoryUpdatePage";
 
 function App() {
   return (
@@ -25,7 +27,9 @@ function App() {
       <Route path="/product/:id" element={<ProductDetailsPage />} />
       <Route path="/blog/:id" element={<BlogDetailsPage />} /> 
       <Route path="/admin/*" >
-        <Route path="users" element={<AdminUserPage />} />
+        <Route path="users" element={<UserPage />} />
+        <Route path="categories" element={<CategoryPage />} />
+        <Route path="categories/update/:id" element={<CategoryUpdatePage />} />
       </Route>
      
 
