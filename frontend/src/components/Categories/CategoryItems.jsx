@@ -1,12 +1,13 @@
+import PropTypes from "prop-types"
 import "./CategoryItems.css"
 
-const CategoryItems = () => {
+const CategoryItems = ({category}) => {
   return (
 
     <li className="category-item">
     <a href="#">
-      <img src="img/categories/categories1.png" alt="" className="category-image"/>
-      <span className="category-title">Smartphone</span>
+      <img src={category.img} alt="" className="category-image"/>
+      <span className="category-title">{category.name}</span>
     </a>
   </li>
  
@@ -14,3 +15,7 @@ const CategoryItems = () => {
 }
 
 export default CategoryItems
+
+CategoryItems.prototypes = {
+  category:PropTypes.object,
+}

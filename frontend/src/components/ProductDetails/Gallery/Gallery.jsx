@@ -1,8 +1,7 @@
 import { useState } from "react";
-import "./Gallery.css";
-import productData from "../../../data.json";
 import PropTypes from "prop-types";
 import Slider from "react-slick";
+import "./Gallery.css";
 
 function PrevBtn({ onClick }) {
   return (
@@ -41,8 +40,13 @@ NextBtn.propTypes = {
 PrevBtn.propTypes = {
   onClick: PropTypes.func,
 };
-const Gallery = () => {
-  const [activeImg, setActiveImg] = useState(productData[0].img.singleImage);
+
+const Gallery = ({ singleProduct }) => {
+  const [activeImg, setActiveImg] = useState({
+    img: singleProduct.img[0],
+    imgIndex: 0,
+  });
+
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -55,23 +59,28 @@ const Gallery = () => {
   return (
     <div className="product-gallery">
       <div className="single-image-wrapper">
-        <img src={`/${activeImg}`} id="single-image" alt="" />
+        <img src={`${activeImg.img}`} id="single-image" alt="" />
       </div>
       <div className="product-thumb">
         <div className="glide__track" data-glide-el="track">
           <ol className="gallery-thumbs glide__slides">
             <Slider {...sliderSettings}>
-              {productData[0].img.thumbs.map((itemImg, index) => (
+              {singleProduct.img.map((itemImg, index) => (
                 <li
                   className="glide__slide glide__slide--active"
                   key={index}
-                  onClick={() => setActiveImg(itemImg)}
+                  onClick={() =>
+                    setActiveImg({
+                      img: itemImg,
+                      imgIndex: index,
+                    })
+                  }
                 >
                   <img
-                    src={`/${itemImg}`}
+                    src={`${itemImg}`}
                     alt=""
                     className={`img-fluid ${
-                      itemImg === activeImg ? "active" : ""
+                      activeImg.imgIndex === index ? "active" : ""
                     } `}
                   />
                 </li>
@@ -86,3 +95,7 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
+Gallery.propTypes = {
+  singleProduct: PropTypes.object,
+};
